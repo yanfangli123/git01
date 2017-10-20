@@ -1,0 +1,36 @@
+eval:主要跟字符串打交道，把字符串转换成JS可以执行的程序。
+	非常好用，但是不建议使用；因为太强大了，[eval注入，eval攻击]；
+
+获取非行间[获取计算后的，生效后的]的样式：
+	obj.currentStyle.width   IE;  不支持的花报undefined；
+	getComputerStyle(oBox,falsed).width兼容高版本，
+	get:获取，computed:计算后的，style：样式；
+
+
+函数：
+	1、定义
+	2、调用
+		return：返回值给谁了？谁调用函数就给谁；
+
+出现undefined的情况：
+1、函数不写return，默认返回undefined；
+2、写了return，没写具体的返回值；
+3、访问一个不存在的属性；
+4、？？？
+
+
+往数组里添加一个：arr.push(元素)；
+
+随机数：
+	Math.random();
+
+双色球：
+	1、6个球；
+	2、不重复；
+	3、随机；parseInt(Math.random()*(m-n)+n);
+	4、1-33之间；
+
+背景色的表达方式：
+	1、英语；
+	2、#c00；
+	3rgb(0,255,234);
