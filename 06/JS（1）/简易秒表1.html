@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>简易秒表1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    window.onload=function(){
+    	var oTxt=document.getElementById("txt");
+    	var oBtn=document.getElementById("btn");
+    	var count=0;
+    	oBtn.onclick=function(){
+    		setInterval(function(){
+    			count++;
+    			oTxt.value=count/60+":"+count%60;
+    		},100)
+    		
+    	}
+    }
+    </script>
+  </head>
+  
+  <body>
+   <input type="text" id="txt">
+   <input type="button"" id="btn" value="按钮">
+  </body>
+</html>
