@@ -1,0 +1,73 @@
+oBtn.disabled=true;按钮不可点击；
+oBtn.disabled=false;按钮可点击；
+
+str.charAt(i):获取字符串中指定索引对应的字符；
+
+时间戳：1970年1月至今的毫秒数；
+
+setDate():设置时间，会自动进位；
+
+//本月第一天是周几？
+	var oDate = new Date();//当前系统时间
+	oDate.setDate(1);//把当前的系统时间设置到本月的第一天;
+	alert(oDate.getDay());//本月第一天是周几
+
+//本月一共有多少天？
+	//求出本月有多少天，假设本月就是10月;
+	var oDate = new Date();
+	oDate.setMonth(oDate.getMonth() +1);//11月份;
+	oDate.setDate(0);//10月的最后一天;（11月份第0天）
+	alert(oDate.getDate());
+
+	说明：oDate.getMonth()  获得的是 9月    +1变为10月  
+	      oDate.setMonth(month,day)  month介于0到11之间；
+
+arguments:实际传递的参数的集合；跟形参无关，跟实参有关，有下标，有length；
+
+with:不建议使用；因为不确定哪个变量名可以使用；
+obj.style.cssText='width:200px;height:200px;background:green";不建议使用；
+
+总结：
+	1、oBtn.disabled=true;取消点击；oBtn.disabled=false;可以点击；
+	2、str.charAt(i);获取字符串中的某一个；
+	3、arguments:
+	实参的集合，跟实参有关，跟形参无关；有length，有下标；
+
+	4、时间对象：
+		获取时间：
+			var oDate = new Date();
+			oYear = oDate.getFullYear();
+			oMon = oDate.getMonth();
+			oDay = oDate.getDate();
+			oHou = oDate.getHours();
+			oMin = oDate.getMinutes();
+			oSec = oDate.getSeconds();
+			oWeek = oDate.getDay();
+
+		设置时间：
+			oDate.setFullyear(年，月，日)；
+			oDate.setMonth(月)；
+			oDate.setHours(时，分，秒，毫秒)；
+			oDate.setDate(日)；
+			时间会自动进位；
+
+		时间戳[1970年至今的毫秒数]：oDate.getTime();
+	
+		5、设置样式：
+			with(公共的代码){
+			//code
+			}
+
+			cssText
+
+		6、数学方法：
+		Math.random():随机数
+		Math.round():四舍五入
+		Math.ceil():向上取整
+		Math.abs():绝对值
+		Math.floor():向下取整
+		Math.max(x,y):求最大值
+		Math.min(x,y):求最小值
+		Math.pow(x,y):几的几次方：
+		Math.sqrt():开平方
+    

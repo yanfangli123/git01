@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>数字时钟1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+    #box {
+	width: 100%;
+	height: 400px;
+	background: black;
+	color: #fff;
+	font-size: 40px;
+	text-align: center;
+	line-height: 400px;
+    }
+    </style>
+    <script type="text/javascript">
+    function addZero(a){
+    	return a<10?"0"+a:""+a;
+    }
+    window.onload=function(){
+    	clock();
+    	setInterval(clock,1000)
+    	function clock(){
+    		var oBox=document.getElementById("box");
+	    	var oDate=new Date;
+		    var oYear=oDate.getFullYear();
+		    var oMonth=oDate.getMonth();
+		    var oday=oDate.getDate();
+		    var oHour=oDate.getHours();
+		    var oMin=oDate.getMinutes();
+		    var oSec=oDate.getSeconds();
+		    var oWeek=oDate.getDay();
+		    if(oWeek==0)oWeek='星期日';
+		    if(oWeek==1)oWeek='星期一';
+		    if(oWeek==2)oWeek='星期二';
+		    if(oWeek==3)oWeek='星期三';
+		    if(oWeek==4)oWeek='星期四';
+		    if(oWeek==5)oWeek='星期五';
+		    if(oWeek==6)oWeek='星期六';
+		    
+		    oBox.innerHTML=addZero(oYear)+"年"+addZero(oMonth+1)+"月"+addZero(oday)+"日 "+addZero(oHour)+"时"+addZero(oMin)+"分"+addZero(oSec)+"秒"+oWeek;
+    	}
+    }
+    
+    </script>
+  </head>
+  
+  <body>
+    <div id="box"></div>
+  </body>
+</html>
