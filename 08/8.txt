@@ -1,0 +1,73 @@
+比大小：
+	两个操作数都是数值，则进行数值比较
+	两个操作数都是字符串，则比较两个字符串对应的字符编码值
+	两个操作数有一个是数值，则将另一个转换为数值，再进行数值比较
+	两个操作数有一个是对象，则先调用valueOf()方法或toString()方法，再用结果比较
+
+	var num = '3'>22;//false
+	var num = '3'>'22';//true,进行第一个数字的比较3>2,所以是true
+	var num = 'a'>'b';//false,a=97,b=98,ASCII表
+	var num = 'a'>'B';//true,B=66
+
+pop() 方法：
+	将删除 arrayObject 的最后一个元素，把数组长度减 1，并且返回它删除的元素的值。如果数组已经为空，
+	则 pop() 不改变数组，并返回 undefined 值。
+
+什么是arguments？
+
+	arguments 是JavaScript里的一个内置对象，它很古怪，也经常被人所忽视，但实际上是很重要的。
+	所有主要的js函数库都利用了arguments对象。所以agruments对象对于javascript程序员来说是必需
+	熟悉的。
+	所有的函数都有属于自己的一个arguments对象，它包括了函所要调用的参数。
+	他不是一个数组，如果用typeof arguments，返回的是’object’。
+	虽然我们可以用调用数据的方法来调用arguments。
+	比如length,还有index方法。但是数 组的push和pop对象是不适用的。
+
+数组添加：push往后面添加；
+	  unshift往前面添加；
+	  pop从后往前删除；
+	  shift从前往后删除；
+          sort按照字母的先后顺序排序
+
+
+字符串方法：
+	怎样得到一个字符串：var str='';
+	怎样获得一个字符串的长度： str.length;
+	空格也算字符串的长度；
+	
+	str.charAt(i):取字符串中的第i个（i为索引）；
+	
+	str.indexOf('e'):查找小字符串'e'在str中的位置（索引）；从左往右数，找不到就返回-1；区分大小写；找到就返回
+	具体的位置，不再往后找；
+
+	str.lastIndexOf('e'):查找小字符串'e'在str章的位置，从右往左找，返回的是从左往右的位置，区分大小写，找不到返回-1；
+
+	str.toUpperCase():字符转大写；
+
+	str.toLowerCase():字符转小写；
+
+
+	str.split('切割的方式')，字符串切割，返回的是一个数组；字符串转数组的方法；
+
+	str.substring(开始位置，结束位置)：截取字符串，包含开始位置，不包含结束位置；如果不写结束位置，默认截取到最后；
+
+	window.navigator.userAgent:浏览器的详细信息;--->UA;
+
+数组方法：
+	arr.push():往数组的后面添加一位
+	arr.unshift():往数组的前面添加一位；
+	arr.pop():从后面添加一位；
+	arr.shift():从前面删除一位；
+	arr.reverse():数组翻转；
+	arr1.concat(arr2,arr3):数组连接；
+	arr.sort(function(n1,n2){return n1-n2})排序   //n1-n2如果是负数:位置不变; //n1-n2如果是正数: 交换位置;
+	arr.join('连接的方式')：数组转字符串的方法；
+
+数组的万能操作：
+	arr.splice();
+	arr.splice(开始的位置，删除的个数)；
+	arr.splice(开始的位置[往哪一位的前面添加]，0，添加的元素1，添加的元素2...);
+	arr.splice(开始的位置，删除的个数，替换的元素1，替换的元素2...);
+
+	
+	
