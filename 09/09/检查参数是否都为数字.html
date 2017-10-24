@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function show(){
+				for(var i=0;i<arguments.length;i++){
+					if(typeof arguments[i]!='number')return false;
+				}
+				return true;
+			}
+			alert(show(1,2,'3',4))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

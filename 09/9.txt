@@ -1,0 +1,75 @@
+js小特性:
+	逗号表达式：只看最后一个逗号后面的那个值;
+
+eg:
+	if(0,1){
+		alert('true')
+	}else{
+		alert('false')
+	}返回结果为true（逗号后面的值为1，为真）
+	
+	if(1,0){
+		alert('true')
+	}else{
+		alert('false')
+	}     返回结果为false（逗号后面的值为0，为假）
+
+
+
+
+删除数组中重复数字的方法：
+	1、先将所有数字从小到大排列；
+		var arr = [1,2,3,4,5,5,5,,6,1,2,3,4,6,5];
+		arr.sort(function(n1,n2){
+		return n1 - n2;
+		});
+	2、删除重复
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==arr[i+1]){
+			arr.splice(i,1);
+			i--;
+		}
+	}
+
+
+数组：存多个东西；
+json：存多个东西；
+json={
+	//键值对
+	name1[键，key]：value1[值,value]
+	name2[键，key]：value2[值,value]
+
+}
+
+对比：
+		json		arr
+length		undefined	arr.length
+下标		属性的方式	arr[0]
+顺序		没有顺序		有顺序
+循环		for in		for，while，for in
+
+for in循环也可以循环数组，但是不建议使用，因为性能略低；
+
+var a = b = c = d = 1;×
+	var a =1;
+	b = 1;
+	c = 1;
+	d = 1;
+
+声明变量不加var，默认为全局变量；少用全局；
+
+预解析：预先解析一些东西，变量的声明会须先解析，函数的定义也会预解析，作用范围：最大到script标签内；最小到函数内部;
+
+引用：指的是同一个东西;对象之间会引用,非对象之间不会引用(不绝对);
+	
+	try{
+		//可能有错误的代码;
+	}catch(e){
+		alert(e.message);
+		补救的代码;
+	}
+
+//var json={a:1,b:2,c:3};---->a=1&b=2&c=3;
+//var str='a=1&b=2&c=3&d=5';---->{a:1,b:2,c:3,d:5}
+
+

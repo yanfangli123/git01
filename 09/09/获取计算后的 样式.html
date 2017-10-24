@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<<style>
+			#box{
+				width:100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		<script>
+			function getStyle(obj,attr){
+				if(obj.style.cuttentStyle){
+					return obj.cuttentStyle[attr];
+				}else{
+					return getComputedStyle(obj,false)[attr]
+				}
+			}
+			window.onload=function(){
+				var oBox=document.getElementById("box");
+				oBox.onclick=function(){
+					alert(getStyle(oBox,'width'));
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
