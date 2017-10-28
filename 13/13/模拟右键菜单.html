@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#menu{
+				width: 100px;
+				position:absolute;
+				left: 0px;
+				top:0px;
+				border: #000 1px solid;	
+				display: none;
+			}
+			#menu li {
+				width: 100px;
+				height: 40px;
+				line-height:40px;
+				border-bottom: #666 1px solid;
+			}
+		
+			#menu li a  {
+				display: block;
+				text-align:center;
+				text-decoration: none;
+				color: #333;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oMenu=document.getElementById("menu");
+				document.oncontextmenu=function(ev){
+					var oEvent=ev || event;
+					var oL=oEvent.clientX;
+					var oT=oEvent.clientY;
+					oMenu.style.display="block";
+					oMenu.style.left=oL+"px";
+					oMenu.style.top=oT+"px";
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="menu">
+			<li><a href="http://www.baidu.com">去百度</a></li>
+			<li><a href="http://www.jd.com">去京东</a></li>
+			<li><a href="http://www.taobao.com">去淘宝</a></li>
+			<li><a href="http://www.sina.com.cn">去新浪</a></li>
+		</ul>
+	</body>
+</html>

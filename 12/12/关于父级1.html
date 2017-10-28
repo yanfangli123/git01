@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box3{
+				width:150px;
+				height: 150px;
+				background: red;
+			}
+			#box2{
+				position: relative;
+			}
+		</style>
+		<script type="text/javascript"> 
+			window.onload=function(){
+				var oBox3=document.getElementById("box3");
+				oBox3.onclick=function(){
+					//alert(this.parentNode.id)   //box1
+					//alert(this.offsetParent.id) 
+					alert(this.offsetParent.id);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2">
+				<div id="box3"></div>
+			</div>
+		</div>
+		
+	</body>
+</html>

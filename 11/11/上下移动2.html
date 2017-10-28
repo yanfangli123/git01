@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBox=document.getElementById("box");
+				var aBtn=document.getElementsByTagName("a");
+				
+				for(var i=0;i<aBtn.length;i++){
+					if(i%2==0){
+						aBtn[i].onclick=function(){
+							alert("上移")
+						}
+					}else{
+						aBtn[i].onclick=function(){
+							var obj=this.parentNode;
+							var oNext=obj.nextElementSibling || obj.nextSibling;
+							var oNext1=oNext.nextElementSibling || oNext.nextSibling;
+							if(obj==oBox.children[oBox.children.length-1]){
+								alert("已经到最后了");
+								return false;
+							}
+					        oBox.insertBefore(obj,oNext1)
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="box">
+			<li><a href="javascript:;">上移</a>1111<a href="javascript:;">下移</a></li>
+			<li><a href="javascript:;">上移</a>2222<a href="javascript:;">下移</a></li>
+			<li><a href="javascript:;">上移</a>3333<a href="javascript:;">下移</a></li>
+			<li><a href="javascript:;">上移</a>4444<a href="javascript:;">下移</a></li>
+			<li><a href="javascript:;">上移</a>5555<a href="javascript:;">下移</a></li>
+			<li><a href="javascript:;">上移</a>6666<a href="javascript:;">下移</a></li>
+		</ul>>
+	</body>
+</html>

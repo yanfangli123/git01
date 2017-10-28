@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+			width:50px;
+			height:50px;
+			background: red;
+			border-radius: 50px;
+			text-align: center;
+			line-height: 50px;
+			float: left;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var str="的时候会出错,会认为括号没写完，结局的方法是;的时候会出错，会认为括号没写完，结局的方法是;的时候会出错 ，会认为括号没写完，结局的方法是:"
+				var timer=null;
+				var num=0;
+				timer=setInterval(function(){
+					num++;
+					if(num>str.length){
+						clearInterval(timer)
+					}
+					var oDiv=document.createElement("div");
+					var a=str.charAt(num);
+					oDiv.innerHTML=a;
+					document.body.appendChild(oDiv)
+				},30)
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

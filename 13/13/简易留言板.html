@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBox=document.getElementById("box");
+				var oBtn=document.getElementById("btn");
+				var oTxt=document.getElementById("txt");
+				oBtn.onclick=function(){
+					sendMessage();
+				}
+				function sendMessage(){
+					var oLi=document.createElement("li");
+					oLi.innerHTML=oTxt.value+"<a href='javascript:;'>隐藏</a>";
+					if(oBox.children.length){
+						oBox.insertBefore(oLi,oBox.children[0])
+					}else{
+						oBox.appendChild(oLi)
+					}
+					oTxt.value="";
+					oLi.children[0].onclick=function(){
+						oBox.removeChild(this.parentNode)
+					}
+				}
+				oTxt.onkeydown=function(ev){
+					var oEvent=ev || event;
+					if(oEvent.keyCode==13){
+						sendMessage();
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		user:<input type="text"  id="txt" value="" />
+		<input type="button" id="btn" value="添加"/>
+		<ul id="box"></ul> 
+	</body>
+</html>

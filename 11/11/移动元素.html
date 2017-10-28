@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		ul,
+		ol {
+			width: 100px;
+			height: 100px;
+			border: #000 1px solid;
+			float:left;
+			overflow:hidden;
+		}
+		input {
+			float: left;
+			margin: 100px 10px 0 10px;
+		}
+		</style>
+
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBox1=document.getElementById("box1");
+				var oBtn=document.getElementById("btn");
+				var oBox2=document.getElementById("box2");
+				oBtn.onclick=function(){
+					oBox2.insertBefore(oBox1.children[0],oBox2.children[0])
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="box1">
+			<li>123214323</li>
+		    <li>1232sasaddsa14323</li>
+		    <li>fresgergre</li>
+		    <li>bmhjkjl;jkq3</li>
+		</ul>
+		<input type="button" value="移动" id="btn"/>
+		<ol id="box2"></ol>
+
+	</body>
+</html>

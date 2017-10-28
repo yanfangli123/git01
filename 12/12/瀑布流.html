@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#box{
+				width: 966px;
+				height: auto;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			#box ul{
+				width: 300px;
+				border:#000 1px solid;
+				float:left;
+				margin-right: 20px;
+			}
+			#box ul li{
+				width: 280px;
+				border:#666 1px solid;
+				margin: 10px 9px;
+			}
+		</style>
+		<script type="text/javascript">
+			function rad(m,n){
+				return parseInt(Math.random()*(n-m))
+			}
+			window.onload=function(){
+				var oBox=document.getElementById("box");
+				var aUI=oBox.children;
+				for(var i=0;i<10;i++){
+					var oLi=document.createElement("li");
+					oLi.style.height=rad(100,400)+"px";
+					oLi.style.background='rgb('+ rad(0,256)+','+rad(0,256)+','+rad(0,266)+')'
+				    aUI[0].appendChild(oLi)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+		</div>
+	</body>
+</html>

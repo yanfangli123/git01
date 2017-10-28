@@ -1,0 +1,20 @@
+物体到左边的距离[到有定位父级的距离]：
+	offsetLeft
+物体到上边的距离[到有定位父级的距离]：
+	offsetTop
+
+obj.parentNode:结构上的父级；network
+obj.offsetParent:定位的父级；最终到body，body没有定位父级[null]
+
+offsetHeight:内容高度；如果内容高度小于盒子模型高度，取值盒子模型的高度，否则取值内容的实际高度；
+
+onfocus:输入框聚焦的时候触发；
+onblur:输入框失去焦点的时候触发；
+focus：让输入框强行获得焦点
+
+图片延时加载：节省带框，节省资源，省钱；
+查看图片加载的方法：F12--->network;
+
+关于自定义属性：
+	设置自定义属性：setArrtibute('属性名'，value)
+	获取自定义属性：getAttribute('属性名')

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*var str='a=1&b=2&c=3';
+			var arr=str.split("&");
+			//console.log(arr)
+			var json={};
+			for(var i=0;i<arr.length;i++){
+				var arr2=arr[i].split('=');
+				console.log(arr2);
+				json[arr2[0]]=arr2[1];
+			}
+			console.log(json)*/
+			
+			function str2json(str){
+				var arr=str.split("&");
+				var json={};
+				for(var i=0;i<arr.length;i++){ 
+					var arr2=arr[i].split('=');
+					json[arr2[0]]=arr2[1];
+				}
+				return json;
+			}
+			console.log(str2json('a=1&b=2&c=3'))
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

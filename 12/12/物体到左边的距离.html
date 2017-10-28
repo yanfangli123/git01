@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+			}
+			#box{
+				width: 100px;
+				height:100px;
+				background: red;
+				margin-left: 100px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBox=document.getElementById("box");
+				oBox.onclick=function(){
+					alert(oBox.offsetLeft)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

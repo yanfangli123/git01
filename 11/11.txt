@@ -1,0 +1,63 @@
+scrollTop()：方法返回或设置匹配元素的滚动条的垂直位置。（从顶部到滚动条上面那个线的距离）
+scroll top offset:指的是滚动条相对于其顶部的偏移。
+
+
+clientHeight：元素客户区的大小，指的是元素内容及其边框所占据的空间大小（经过实践取出来的大多是视口大小）（滚动条本身的长度）
+scrollHeight: 滚动大小，指的是包含滚动内容的元素大小（元素内容的总高度）
+offsetHeight: 偏移量，包含元素在屏幕上所用的所有可见空间（包括所有的内边距滚动条和边框大小，不包括外边距
+
+
+onresize 事件会在窗口或框架被调整大小时发生。
+
+this.offsetHeight：弹出元素本身的高
+
+alert(typeof oBox.offsetWidth);//100,number
+alert(typeof getStyle(oBox,'width'));//100px,string
+
+
+
+假设 obj 为某个 HTML 控件。
+
+obj.offsetTop 指 obj 相对于版面或由 offsetParent 属性指定的父坐标的计算上侧位置，整型，单位像素。
+
+obj.offsetLeft 指 obj 相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置，整型，单位像素。
+
+obj.offsetWidth 指 obj 控件自身的绝对宽度，不包括因 overflow 而未显示的部分，也就是其实际占据的宽度，整型，单位像素。
+
+obj.offsetHeight 指 obj 控件自身的绝对高度，不包括因 overflow 而未显示的部分，也就是其实际占据的高度，整型，单位像素。
+
+创建元素：
+	document.creatElement('tagname');
+
+添加：
+	往后面添加一条：
+		父级.appendChild（要添加的元素）；
+	往前面添加一条：
+		父级.insertBefore(要添加的元素，在谁的前面)；
+
+删除元素：
+	父级.removeChild(要删除的元素)；
+
+window.onscroll:滚动滚动条的时候触发；
+window.onresize:缩放浏览器窗口的时候触发；
+
+可视区宽：document.documentElement.clientWidth;
+可视区高：document.documentElement.clientHeight;	
+
+		getStyle		offsetWidth/Height
+单位：		带单位			不带单位
+数据类型		string			number
+宽/高		本身宽高			盒子模型的宽高
+对于隐藏		可以获取			获取不到[0]
+
+滚动距离：横向和纵向；
+	纵向：
+		document.body.scrollTop;兼容chrome;
+		document.documentElement.scrollTop;火狐和IE
+
+	横向：
+		document.body.scrollLeft:兼容chrome；
+		document.documentElement.scrollLeft:火狐和IE
+	var scroll=document.documentElement.scrollLeft || document.body.scrollLeft;
+
+事件可以连等；

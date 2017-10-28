@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*for(var i=0;i<2;i++){
+				setTimeout(function(){
+					alert(i)
+				},300) 
+			}*/
+			for(var i=0;i<2;i++){
+				(function(index){
+					setTimeout(function(){
+					alert(index)
+					},300) 
+				})(i)
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

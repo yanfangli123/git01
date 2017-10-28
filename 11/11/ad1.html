@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: fixed;
+				_position: absolute;
+				bottom: 0px;
+				right: 0px;	
+			}
+		</style>
+		<script type="text/javascript">
+			if(window.navigator.userAgent.indexOf('MSIE 6.0')!=-1){
+				window.onload=function(){
+					var oBox=document.getElementById("box");
+					window.onscroll=window.onresize=function(){
+						var scrollT=document.documentElement.scrollTop;
+						var clientH=document.documentElement.clientHeight;
+						var oBoxH=oBox.offsetHeight;
+						oBox.style.top=clientH-oBoxH+scrollT+"px";
+					}
+				}
+			}
+		</script> 
+	</head>
+	<body style="height: 3000px;">
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

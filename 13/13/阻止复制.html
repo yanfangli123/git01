@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				document.onkeydown=function(ev){
+					var oEvent=ev || event;
+					if(oEvent.ctrlKey&&oEvent.keyCode==67){
+						return false;
+					}
+				}
+				document.oncontextmenu=function(){
+					return false;  
+				}
+			}
+		</script> 
+	</head>
+	<body>
+		司亚楠,王蕊蕊,王欣,都是个王八蛋.
+	</body>
+</html>

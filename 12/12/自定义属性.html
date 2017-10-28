@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBtn=document.getElementById("btn");
+				oBtn.onclick=function(){
+					alert(this.getAttribute("index"))
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" index="abc" id="btn" value="123" />
+	</body>
+</html>

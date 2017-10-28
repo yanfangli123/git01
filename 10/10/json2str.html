@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*var json={a:1,b:2,c:3}
+			var arr=[];
+			for(var name in json){
+				arr.push(name+"="+json[name])
+			}
+			alert(arr.join("&")) */
+			function json2str(json){
+				var arr=[];
+				for(var name in json){
+					arr.push(name+"="+json[name]);
+				}
+				return arr.join("&")
+			}
+			console.log(json2str({a:1,b:2,c:3}))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

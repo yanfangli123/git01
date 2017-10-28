@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+			}
+			#box1{
+				width: 100px;
+				height:100px;
+				background: red;
+				margin-left: 100px;
+			}
+			#box2{
+				position: relative;
+				margin-left:100px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBox1=document.getElementById("box1");
+				oBox1.onclick=function(){
+					alert(oBox1.offsetLeft+oBox1.offsetParent.offsetLeft)
+				}
+			}
+		</script> 
+	</head>
+	<body>
+		<div id="box2">
+			<div id="box1">
+				
+			</div>
+		</div>
+	</body>
+</html>

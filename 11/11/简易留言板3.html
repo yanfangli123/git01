@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBox=document.getElementById("box");
+				var oBtn=document.getElementById("btn");
+				var oTxt=document.getElementById("txt");
+				oBtn.onclick=function(){
+					var oLi=document.createElement("li");
+					oLi.innerHTML=oTxt.value+"<a href='javascript:;'>隐藏</a>";
+					if(oBox.children.length){
+						oBox.insertBefore(oLi,oBox.children[0])
+					}else{
+						oBox.appendChild(oLi);
+					}
+					
+					oTxt.value="";
+					oLi.children[0].onclick=function(){
+						oBox.removeChild(this.parentNode)
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		user:<input type="text"  id="txt" value="" />
+		<input type="button" id="btn" value="添加" />
+		<ul id="box">
+			<!--<li>asaff<a href="javascript:;">隐藏</a></li>-->
+		</ul>
+	</body>
+</html>

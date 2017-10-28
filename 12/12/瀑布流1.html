@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#box{
+				width: 966px;
+				height: auto;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			#box ul{
+				width: 300px;
+				border:#000 1px solid;
+				float:left;
+				margin-right: 20px;
+			}
+			#box ul li{
+				width: 280px;
+				border:#666 1px solid;
+				margin: 10px 9px;
+			}
+		</style>
+		<script type="text/javascript">
+			function rad(m,n){
+				return parseInt(Math.random()*(n-m))
+			}
+			function creatLi(){
+				var oLi=document.createElement("li");
+				oLi.style.height=rad(100,400)+"px";
+				oLi.style.background='rgb('+ rad(0,256)+','+rad(0,256)+','+rad(0,266)+')'
+			    return oLi;
+			}
+			window.onload=function(){
+				var oBox=document.getElementById("box");
+				var aUI=oBox.children;
+				function appendLi(){
+					for(var i=0;i<10;i++){
+						var oLi=creatLi();
+						var oH1=aUI[0].offsetHeight;
+						var oH2=aUI[1].offsetHeight;
+						var oH3=aUI[2].offsetHeight;
+		        		var oMin=null;//得到最小的ul
+						if(oH1<oH2){
+							if(oH1<oH3){
+								oMin=aUI[0]
+							}else{
+								oMin=aUI[2]
+							}
+						}else{
+							if(oH2<oH3){
+								oMin=aUI[1]
+							}else{
+								oMin=aUI[2]
+							}
+						}
+						oMin.appendChild(oLi);
+					}
+				}
+				appendLi();
+				window.onscroll=function(){
+				var oScrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+				var clientH=document.documentElement.clientHeight;
+				var oBoxH=oBox.scrollHeight;
+				if(oScrollTop+clientH>=oBoxH){
+					appendLi();
+				}
+
+			}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+		</div>
+	</body>
+</html>

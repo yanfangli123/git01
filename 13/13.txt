@@ -1,0 +1,131 @@
+1.物体到左边的距离[到有定位父级的距离]：
+		obj.ofsetLeft;
+		物体到上边的距离[到有定位父级的距离]：
+		obj.offsetTop;
+		function getPos(obj){
+			var l = 0; 
+			var t = 0;
+			while(obj){
+				l+=obj.offsetLeft;
+				t+=obj.offsetTop;
+				obj = obj.offsetParent;
+			}
+			return {left: l, top: t};
+		}
+	
+2.父级：
+	结构上的父级
+		obj.parentNode
+	定位的父级：
+		obj.offsetParent;
+	
+3.内容的高度：
+	obj.scrollHeight;
+	
+4.onfocus:聚焦的时候触发
+	onblur:失去焦点的时候触发;
+	focus():让元素强行获得焦点；
+	
+5.自定义属性
+	obj.setAttribute('属性名',value);
+	obj.getAttribute('属性名');
+
+
+
+
+
+回车键：13
+上键头：38
+左键头：37
+下键头：40
+右键头：39（顺时针增大）
+ctrlKey 事件属性可返回一个布尔值，指示当事件发生时，Ctrl 键是否被按下并保持住。（1为被按下，0为没有被按下）
+
+
+
+阻止事件冒泡：
+	事实上stoppropagation和cancelBubble的作用是一样的，都是用来阻止浏览器默认的事件冒泡行为。
+	不同之处在于stoppropagation属于W3C标准，试用于Firefox等浏览器，但是不支持IE浏览器。相反cancelBubble不符合W3C标准，而且只支持IE浏览器。所以很多时候，我们都要结合起来用。不过，cancelBubble在新版本chrome,opera浏览器中已经支持。
+	语法：e.stopPropagation();
+
+
+点击右键：oncontextmenu
+	当用户在 <div> 元素 上右击鼠标时执行 JavaScript ：
+	<div oncontextmenu="myFunction()" contextmenu="mymenu">
+
+
+事件对象：存储或者描述了事件更加详细的信息；
+
+body简写：document.body
+
+html的简写：document；
+
+clientX:水平坐标；尽量结合scrollLeft使用；
+clientY:垂直坐标，尽量结合scrollTop使用；
+
+event：兼容IE系列和chrome；不兼容火狐event is not defined;
+解决办法：
+	var oEvent=ev  || event;
+
+事件：
+	onclick
+	onmouseover
+	onmouseout
+	onscroll
+	onresize
+	onfocus
+	onblur
+	onmousemove:移动；触发的频率非常高，复杂的代码不要放到这个事件里面；
+ 
+http://www.baidu.com/?:
+	url构成：？前面视纯地址，？后面放的是数据；
+
+关于form：
+	必须的东西是：
+		action:提交的网址；
+		name:数据的名称；
+		value：输入的值；
+		method:提交的方式[get&&post];
+***get：数据显示在URL上，不安全；容量小（32kb）；有缓存；非常适合做分享
+
+***post：数据不显示在URL上，相对安全；容量大（1GB）；没有缓存的；不适合做分享；
+的AS&pass=1221435ADADADSDSF
+POST:http://www.baidu.com/
+
+缓存[cache]:针对浏览器来说的，一个相同的网址，只会访问一次；
+
+要改变元素位置，这个元素要有定位；
+
+onmouseenter：鼠标进入；
+onmouseleave：鼠标离开；
+
+事件冒泡：
+	子元素的事件会传递到父元素身上，父级有相同的事件会一直传递执行，没有的话继续冒泡；
+
+取消时间冒泡：
+	oEvent.cancelBubble=true;
+
+document.ncontextmenu:鼠标右键；
+
+取消浏览器的默认行为：return false;
+
+键盘事件：onkeydown：键盘按下；
+	onkeyup：键盘抬起；
+
+keyCode：键码；
+
+键码：
+	左上右下：37/38/39/40；
+	回车键：13；
+
+ctrl：ctrlKey
+alt:altKey
+shift:shiftKey
+
+
+
+
+
+
+
+
